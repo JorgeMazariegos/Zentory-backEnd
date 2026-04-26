@@ -10,7 +10,7 @@ module.exports = (sequelize, Sequelize) => {
         id_usuario:{
             type: DataTypes.INTEGER,
             references:{
-                model: 'usuario',
+                model: 'usuarios',
                 key: 'id_usuario'
             }
         },

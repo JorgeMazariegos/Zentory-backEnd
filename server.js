@@ -22,10 +22,11 @@ app.get("/", (req, res) => {
 });
 
 require("./app/routes/usuario.routes")(app);
+require("./app/routes/producto.routes")(app);
 require("./app/routes/inventario.routes")(app);
 require("./app/routes/venta.routes")(app);
 require("./app/routes/detalleVenta.routes")(app);
-require("./app/routes/producto.routes")(app);
+
 
 const PORT = process.env.PORT || 8081;
 app.listen(PORT, () => {
