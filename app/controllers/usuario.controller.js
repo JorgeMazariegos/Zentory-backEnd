@@ -56,6 +56,20 @@ exports.findOne = (req, res) => {
         });
 };
 
+exports.findByEmail = (req, res) => {
+    const email = req.params.email; 
+
+    Usuario.findOne({ where: { email: email } })
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: "Error retrieving usuario with email=" + email
+            });
+        }); 
+};
+
 exports.update = (req, res) => {
     const id = req.params.id;
 
