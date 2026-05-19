@@ -10,6 +10,7 @@ exports.create = (req, res) => {
         precio_venta: req.body.precio_venta,
         stock_minimo: req.body.stock_minimo,
         descripcion: req.body.descripcion,
+        disponible: req.body.disponible
     };
 
     Producto.create(producto)

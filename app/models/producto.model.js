@@ -22,6 +22,10 @@ module.exports = (sequelize, Sequelize) => {
         },        
         descripcion:{
             type: DataTypes.TEXT
+        },
+        disponible:{
+            type: DataTypes.BOOLEAN,
+            defaultValue: true
         }
     });
     return Producto;
