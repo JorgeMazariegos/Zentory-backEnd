@@ -26,6 +26,9 @@ module.exports = (sequelize, Sequelize) => {
         impuesto:{
             type: DataTypes.DECIMAL(10, 2)
         },
+        metodo_pago:{
+            type: DataTypes.STRING
+        }
     });
     return Venta;
 };

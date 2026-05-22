@@ -10,6 +10,7 @@ exports.create = (req, res) => {
         total: req.body.total,
         descuento: req.body.descuento,
         impuesto: req.body.impuesto,
+        metodo_pago: req.body.metodo_pago
     };
 
     Venta.create(venta)
@@ -36,6 +37,22 @@ exports.findAll = (req, res) => {
             res.status(500).send({
                 message:
                     err.message || "Some error occurred while retrieving sales."
+            });
+        });
+};
+
+exports.findByMetodoDePago = (req, res) => {
+    const metodo_pago = req.params.metodo_pago;
+    var condition = metodo_pago ? { metodo_pago: { [Op.eq]: metodo_pago } } : null;
+
+    Venta.findAll({ where: condition })
+        .then(data => {
+            res.send(data);
+        })
+        .catch(err => {
+            res.status(500).send({
+                message:
+                    err.message || "Some error occurred while retrieving sales by payment method."
             });
         });
 };
