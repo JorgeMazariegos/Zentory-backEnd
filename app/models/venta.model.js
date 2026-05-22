@@ -21,10 +21,10 @@ module.exports = (sequelize, Sequelize) => {
             type: DataTypes.DECIMAL(10, 2)
         },
         descuento:{
-            type: DataTypes.INTEGER
+            type: DataTypes.DECIMAL(10, 2)
         },
         impuesto:{
-            type: DataTypes.INTEGER
+            type: DataTypes.DECIMAL(10, 2)
         },
     });
     return Venta;
